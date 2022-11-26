@@ -1,6 +1,7 @@
 import psutil
 import time
 import MacTmp
+import os
 
 
 class SysMonitor:
@@ -60,14 +61,14 @@ if __name__ == '__main__':
     repeat = 0
     a = SysMonitor()
     while True:
+        os.system('clear')
         repeat += 1
-        print(f'\nRepeat #{repeat}, {a.period} seconds timeout \n')
+        print(f'Repeat #{repeat}, {a.period} seconds timeout \n')
         a.memory()
         a.cpu()
         a.loadavg()
         a.temperature()
-        #a.battery()
-        #a.disk_util()
+        # a.battery()
+        # a.disk_util()
         a.process_monitor()
         time.sleep(a.period)
-        
